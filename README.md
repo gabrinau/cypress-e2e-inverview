@@ -1,2 +1,3 @@
-# cypress-e2e-inverview
-Estructura Basica de Cypress
+# CYPRESS.IO
+
+Repositorio con estructura basica de cypress para hacer prueba de E2E.
