@@ -1,4 +1,4 @@
-context("Validar Login", () => {
+/*context("Validar Login", () => {
   it("Validar Login Satisfactorio", () => {
     cy.visit('https://www.demoblaze.com/index.html'); // se ingresa a la plataforma
 
@@ -8,5 +8,13 @@ context("Validar Login", () => {
     cy.get('#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary').click(); // se clickea en el botón del modal Login
     cy.get('#logInModal').should('not.be.visible'); // verificando que desaparezca el modal
     cy.get('#nameofuser').should('contain', 'Welcome marti123'); // ingreso exitoso
+  });
+});*/
+
+context("Validar Login", () => {
+  it("Validar Login Satisfactorio", () => {
+    cy.visit('https://www.demoblaze.com/index.html'); // se ingresa a la plataforma
+    cy.loginUsuario('marti123', 'marti456'); // comando para usuario existente y contraseña
+    cy.ingresoExitoso('marti123'); // comando para validar el ingreso exitoso
   });
 });

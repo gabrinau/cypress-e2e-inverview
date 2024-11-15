@@ -1,4 +1,4 @@
-context("Agregar productos", () => {
+/*context("Agregar productos", () => {
     it("Validar compra de productos Exitoso", () => {
     // agregar un producto al carrito (Samsung Galaxy S6)
       cy.visit('https://www.demoblaze.com/index.html'); // se ingresa a la página
@@ -28,4 +28,16 @@ context("Agregar productos", () => {
       cy.reload(); // se actualiza el estado
       cy.get('tr.success').should('not.exist'); // se verifica que no hay productos en el carrito
     })
-  })
+  })*/
+
+  context("Agregar productos", () => {
+    it("Validar compra de productos Exitoso", () => {
+      cy.visit('https://www.demoblaze.com/index.html'); // se ingresa a la página
+      cy.agregarProducto('Samsung galaxy s6'); // se agrega producto al carrito
+  
+      // finalizar compra
+      cy.finalizarCompra('Martina', 'Chile', 'Santiago', '5224539431061072', '10', '25'); // se completa formulario
+      cy.reload(); // se actualiza el estado
+      cy.get('tr.success').should('not.exist'); // se verifica que no hay productos en el carrito
+    });
+  });
