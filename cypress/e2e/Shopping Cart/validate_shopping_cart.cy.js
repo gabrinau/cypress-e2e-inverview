@@ -33,10 +33,10 @@
   context("Agregar productos", () => {
     it("Validar compra de productos Exitoso", () => {
       cy.visit('https://www.demoblaze.com/index.html'); // se ingresa a la página
-      cy.agregarProducto('Samsung galaxy s6'); // se agrega producto al carrito
+      cy.agregarProducto('Samsung galaxy s6'); // comando para agregar producto al carrito
   
       // finalizar compra
-      cy.finalizarCompra('Martina', 'Chile', 'Santiago', '5224539431061072', '10', '25'); // se completa formulario
+      cy.finalizarCompra('Martina', 'Chile', 'Santiago', '5224539431061072', '10', '25'); // comando para completar compra
       cy.reload(); // se actualiza el estado
       cy.get('tr.success').should('not.exist'); // se verifica que no hay productos en el carrito
     });
